@@ -1,1 +1,91 @@
 
+body {
+  margin: auto;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  background-color: #EAE7DC;
+  color: #8E8D8A;
+  height: 90vh;
+}
+
+/* header */
+
+header {
+  padding: 5px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+/* score box */
+
+span {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.scoreboxContainer {
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.scorebox {
+  margin: auto;
+  border: 2px solid white;
+  width: 200px;
+  height: 80px;
+  position: relative;
+}
+
+.badge {
+  background-color: #E25840;
+  font-size: 14px;
+  padding: 5px 10px;
+  color: white;
+}
+
+#userlabel {
+  position: absolute;
+  top: 25px;
+  left: -25px;
+  border-radius: 4px;
+}
+
+#complabel {
+  position: absolute;
+  top: 25px;
+  right: -25px;
+  border-radius: 4px;
+}
+
+/* buttons */
+
+h2 {
+  margin: 10px;
+}
+
+.buttonContainer {
+  display: inline;
+}
+
+.moveButton {
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin: 10px 10px;
+  background-color: #D8C3A5;
+}
+
+.moveButton:hover {
+  background-color: #E85A4F;
+}
+
+.moveButton:visited {
+  background-color: #8E8B8A;
+}

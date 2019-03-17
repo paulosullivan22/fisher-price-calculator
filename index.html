@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Calculator</title>
+	<title>Rock, Paper, Scissors</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>Calculator</h1>
+	<header>
+		<h1>Rock, Paper, Scissors</h1>
+	</header>
 
-	<form>
-		Value 1: <input type="text" id="value1">
-		Value 2: <input type="text" id="value2">
-		Operator:
-		<select id="operator">
-			<option value="add">Add</option>
-			<option value="min">Minus</option>
-			<option value="mul">Multiple</option>
-			<option value="div">Divide</option>
-		</select>
-		<button type="button" id="button">Calculate</button>
-	</form>
-	<h3 id ="result"></h3>
-
+	<main>
+		<div class="scoreboxContainer">
+				<div class="scorebox">
+					<div id="userlabel" class="badge">User</div>
+					<div id="complabel" class="badge">Comp</div>
+					<p><span id="userScore">0</span>:<span id="compScore">0</span></p>
+				</div>
+			</div>
+		<h2>Choose rock, paper or scissors</h2>
+		<div class="buttonContainer">
+			<button class="moveButton" id="rockButton"><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Raised_Fist_Emoji_Icon_ios10_grande.png?v=1542436023" height="30px" width="30px"></button>
+			<button class="moveButton" id="paperButton"><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Raised_Back_Of_Hand_Emoji_Icon_ios10_large.png?v=1542436023" height="30px" width="30px"></button>
+			<button class="moveButton" id="scissorsButton"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/155/victory-hand_270c.png" height="30px" width="30px"></button>
+		</div>
+		<p>Make your move.</p>
+	 </main>
 
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
-# fisher-price-calculator
+# rock-paper-scissors
