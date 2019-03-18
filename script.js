@@ -1,23 +1,16 @@
-// when the user clicks any button
-// calculate a random comp result
-// display the comp result below
-//   user selection
-// if the comp result beats the user
-//   result, display "you lose" and
-//   add one to the comp score
-// if the user result beats the comp
-//   result, display "you win" and
-//   add one to the user score
 
+// Individual get elements for rock/paper/scissor buttons
 const rockButton = document.getElementById('rockButton');
 const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
-
-var numCompResult;
+const resultText = document.getElementById('resultText');
+// Declaring all global variables
 var compResult;
 var userChoice;
 
+// Determine the computer's move
 function randomiseCompScore() {
+  var numCompResult;
   numCompResult = Math.floor((Math.random() * 3));
   if (numCompResult === 0) {
     compResult = "Rock";
@@ -26,43 +19,53 @@ function randomiseCompScore() {
   } else if (numCompResult === 2) {
     compResult = "Scissors";
   }
-  console.log("computer result", compResult);
 };
 
-console.log("computer result", compResult);
+// Determine who wins the game
+function whoWins(a, b) {
+  var winner;
+  var gameResult;
+  if (a === b) {
+    winner = "draw";
+  } else if (a === "Rock" && b ==="Paper") {
+    winner = "user";
+  } else if (a === "Rock" && b === "Scissors") {
+    winner = "comp";
+  } else if (a === "Paper" && b === "Rock") {
+    winner = "comp";
+  } else if (a === "Paper" && b === "Scissors") {
+    winner = "user";
+  } else if (a === "Scissors" && b === "Rock") {
+    winner = "user";
+  } else if (a === "Scissors" && b === "Paper") {
+    winner = "comp";
+  };
+  if (winner === "user") {
+    gameResult = "You win!";
+  } else if (winner === "comp") {
+    gameResult = "The computer wins!";
+  } else if (winner === "draw") {
+    gameResult = "The game is a draw...";
+  }
+  console.log(gameResult);
+}
 
-var rockRandomiseCompScore = function() {
+// Run possible user journeys
+rockButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Rock";
-};
-
-var paperRandomiseCompScore = function() {
+  whoWins(compResult, userChoice);
+  // resultText.innerHTML = "You choose rock, the computer chooses " + compResult "!"\n + gameResult;
+})
+;
+paperButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Paper";
-};
+  whoWins(compResult, userChoice);
+});
 
-var scissorsRandomiseCompScore = function() {
+scissorsButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Scissors";
-};
-
-console.log("user choice", userChoice);
-
-rockButton.addEventListener("click", rockRandomiseCompScore, false);
-paperButton.addEventListener("click", paperRandomiseCompScore, false);
-scissorsButton.addEventListener("click", scissorsRandomiseCompScore, false);
-
-var winner;
-
-function whoWins(compResult, userChoice) {
-  if (compResult === userChoice) {
-    winner = "draw";
-  } else if (compResult === "Rock" && userChoice ==="Paper") {
-    winner = "comp";
-  } else if (compResult === "Paper" && userChoice === "Scissors") {
-    winner = "user";
-  } else {
-    winner = "no one";
-  }
-  return winner;
-}
+  whoWins(compResult, userChoice);
+});
