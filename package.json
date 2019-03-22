@@ -1,0 +1,22 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "browserify script.js > bundle.js && live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulosullivan22/rock-paper-scissors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulosullivan22/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/paulosullivan22/rock-paper-scissors#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

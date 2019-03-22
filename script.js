@@ -1,10 +1,9 @@
-
 // Individual get elements for rock/paper/scissor buttons
 const rockButton = document.getElementById('rockButton');
 const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
 const resultText = document.getElementById('resultText');
-// Declaring all global variables
+// Declaring global variables
 var compResult;
 var userChoice;
 
@@ -42,10 +41,13 @@ function whoWins(a, b) {
   };
   if (winner === "user") {
     gameResult = "You win!";
+    resultText.innerHTML = gameResult;
   } else if (winner === "comp") {
     gameResult = "The computer wins!";
+    resultText.innerHTML = gameResult;
   } else if (winner === "draw") {
     gameResult = "The game is a draw...";
+    resultText.innerHTML = gameResult;
   }
   console.log(gameResult);
 }
@@ -55,7 +57,6 @@ rockButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Rock";
   whoWins(compResult, userChoice);
-  // resultText.innerHTML = "You choose rock, the computer chooses " + compResult "!"\n + gameResult;
 })
 ;
 paperButton.addEventListener("click", function() {
