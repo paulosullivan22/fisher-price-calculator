@@ -3,6 +3,8 @@ const rockButton = document.getElementById('rockButton');
 const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
 const resultText = document.getElementById('resultText');
+const choicesText = document.getElementById('choicesText');
+
 // Declaring global variables
 var compResult;
 var userChoice;
@@ -57,16 +59,19 @@ rockButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Rock";
   whoWins(compResult, userChoice);
+  choicesText.innerHTML = "You chose " + userChoice + ", the computer chose " + compResult;
 })
 ;
 paperButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Paper";
   whoWins(compResult, userChoice);
+  choicesText.innerHTML = "You chose " + userChoice + ", the computer chose " + compResult;
 });
 
 scissorsButton.addEventListener("click", function() {
   randomiseCompScore();
   userChoice = "Scissors";
   whoWins(compResult, userChoice);
+  choicesText.innerHTML = "You chose " + userChoice + ", the computer chose " + compResult;
 });
