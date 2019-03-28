@@ -4,9 +4,9 @@ const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
 const resultText = document.getElementById('resultText');
 const choicesText = document.getElementById('choicesText');
-const userscore = document.getElementById('userScore');
-userscore = 0;
-userScore.innerHTML = userScore;
+let userscore = document.getElementById('userScore');
+let compscore = document.getElementById('compScore');
+
 
 // Declaring global variables
 var compResult;
@@ -44,17 +44,22 @@ function whoWins(a, b) {
   } else if (a === "Scissors" && b === "Paper") {
     winner = "comp";
   };
+  let userCounter = 0;
+  let compCounter = 0;
   if (winner === "user") {
     gameResult = "You win!";
-    userScore++;
+    userCounter++;
     resultText.innerHTML = gameResult;
   } else if (winner === "comp") {
     gameResult = "The computer wins!";
+    compCounter++;
     resultText.innerHTML = gameResult;
   } else if (winner === "draw") {
     gameResult = "The game is a draw...";
     resultText.innerHTML = gameResult;
   }
+  userscore.innerHTML = userCounter;
+  compscore.innerHTML = compCounter;
   console.log(gameResult);
 }
 
